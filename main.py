@@ -3,12 +3,12 @@ import json
 from canvasapi import *
 
 # Config
-URL = "https://canvas.nus.edu.sg"
-TOKEN = "21450~xyXhGeH8xP4hQcBxZwQ34afUCcYPZKWwLTMMcBAw9EEzcAGE6Mmz3mAkT4ZMH2w3"
-DOWNLOAD_FOLDER = "/Users/ngshijun/Desktop/NUS/Y4S1"
-CHECKER = '/Users/ngshijun/Desktop/NUS/Y4S1/checker.json'
+CANVAS_URL = os.environ.get('CANVAS_URL')
+CANVAS_TOKEN = os.environ.get('CANVAS_TOKEN')
+DOWNLOAD_FOLDER = os.environ.get('DOWNLOAD_FOLDER')
+CHECKER = os.environ.get('CHECKER')
 
-canvas = Canvas(URL, TOKEN)
+canvas = Canvas(CANVAS_URL, CANVAS_TOKEN)
 user = canvas.get_user('self')
 
 if not os.path.exists(DOWNLOAD_FOLDER):
