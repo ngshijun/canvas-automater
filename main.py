@@ -1,9 +1,11 @@
 import os
 import json
+from dotenv import load_dotenv
 from canvasapi import *
 
 # Config
-CANVAS_URL = os.environ.get('CANVAS_URL')
+load_dotenv()
+CANVAS_URL = os.environ.get("CANVAS_URL")
 CANVAS_TOKEN = os.environ.get('CANVAS_TOKEN')
 DOWNLOAD_FOLDER = os.environ.get('DOWNLOAD_FOLDER')
 CHECKER = os.environ.get('CHECKER')
